@@ -7,9 +7,14 @@ import { Textarea } from "@/shared/ui/textarea";
 type CtaBlockEditorProps = {
     block: CtaBlock;
     onChange: (block: CtaBlock) => void;
+    showErrors?: boolean;
 };
 
-export function CtaBlockEditor({ block, onChange }: CtaBlockEditorProps) {
+export function CtaBlockEditor({
+    block,
+    onChange,
+    showErrors = false,
+}: CtaBlockEditorProps) {
     return (
         <div className="flex flex-col gap-4">
             <div>
@@ -23,6 +28,7 @@ export function CtaBlockEditor({ block, onChange }: CtaBlockEditorProps) {
                         onChange({ ...block, title: event.target.value })
                     }
                     placeholder="Заголовок"
+                    invalid={showErrors && !block.title.trim()}
                 />
             </div>
 
@@ -37,6 +43,7 @@ export function CtaBlockEditor({ block, onChange }: CtaBlockEditorProps) {
                         onChange({ ...block, text: event.target.value })
                     }
                     placeholder="Текст"
+                    invalid={showErrors && !block.text.trim()}
                     rows={2}
                 />
             </div>
@@ -52,6 +59,7 @@ export function CtaBlockEditor({ block, onChange }: CtaBlockEditorProps) {
                         onChange({ ...block, buttonLabel: event.target.value })
                     }
                     placeholder="Текст кнопки"
+                    invalid={showErrors && !block.buttonLabel.trim()}
                 />
             </div>
         </div>

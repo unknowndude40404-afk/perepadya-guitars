@@ -67,7 +67,7 @@ export function PhoneInput({
           border-r
           border-[var(--border-primary)]
           px-4
-          text-[16px]
+          text-sm
           font-medium
           text-[var(--text-primary)]
         "
@@ -89,7 +89,7 @@ export function PhoneInput({
           bg-transparent
           px-4
           py-[13px]
-          text-[16px]
+          text-sm
           text-[var(--text-primary)]
           outline-none
           placeholder:text-[var(--text-secondary)]

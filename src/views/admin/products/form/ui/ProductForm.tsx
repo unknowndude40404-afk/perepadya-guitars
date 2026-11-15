@@ -4,6 +4,11 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { Button } from "@/shared/ui/button";
+import {
+    EditModeSwitch,
+    JsonEditor,
+    type EditMode,
+} from "@/shared/ui/json-editor";
 
 import type { AdminProductDetails } from "../api/get-admin-product";
 
@@ -29,6 +34,12 @@ import {
     uploadNewImages,
     type ProductImageDraft,
 } from "./product-images";
+import {
+    buildProductAiPrompt,
+    productJsonSchema,
+    toProductJson,
+    type ProductFormData,
+} from "../lib/product-json";
 
 type ProductFormProps = {
     product?: AdminProductDetails;
@@ -55,6 +66,10 @@ export function ProductForm({ product }: ProductFormProps) {
         toExistingImages(product?.images ?? []),
     );
 
+    const [mode, setMode] = useState<EditMode>("manual");
+
+    const [jsonError, setJsonError] = useState<string | null>(null);
+
     const [submitAttempted, setSubmitAttempted] = useState(false);
 
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -71,9 +86,28 @@ export function ProductForm({ product }: ProductFormProps) {
 
     const imagesInvalid = images.length === 0;
 
+    const jsonInvalid = mode === "json" && Boolean(jsonError);
+
     const isFormValid =
         !textsInvalid &&
-        !imagesInvalid;
+        !imagesInvalid &&
+        !jsonInvalid;
+
+    const missingFields = LOCALES.flatMap((locale) => {
+        const errors = getProductTextErrors(locale, texts[locale]);
+        const fields = (Object.keys(errors) as (keyof typeof errors)[]).filter(
+            (field) => errors[field],
+        );
+
+        return fields.length ? [`${locale}: ${fields.join(", ")}`] : [];
+    });
+
+    function applyJson(data: ProductFormData) {
+        setTexts(data.texts);
+        setStatus(data.status);
+        setGtin(data.gtin);
+        setIsHidden(data.isHidden);
+    }
 
     async function handleSubmit() {
         if (isSubmitting) {
@@ -149,13 +183,43 @@ export function ProductForm({ product }: ProductFormProps) {
                 {isEdit ? "Редагувати товар" : "Новий товар"}
             </h1>
 
-            <div className="flex flex-col gap-6">
-                <ProductTexts
-                    texts={texts}
-                    slug={slug}
-                    showErrors={submitAttempted}
-                    onChange={setTexts}
+            <div className="mb-6">
+                <EditModeSwitch
+                    value={mode}
+                    onChange={setMode}
+                    jsonError={jsonError}
                 />
+            </div>
+
+            <div className="flex flex-col gap-6">
+                {mode === "manual" ? (
+                    <ProductTexts
+                        texts={texts}
+                        slug={slug}
+                        showErrors={submitAttempted}
+                        onChange={setTexts}
+                    />
+                ) : (
+                    <JsonEditor
+                        initialValue={toProductJson({
+                            texts,
+                            status,
+                            gtin,
+                            isHidden,
+                        })}
+                        schema={productJsonSchema}
+                        onChange={applyJson}
+                        onErrorChange={setJsonError}
+                        getAiPrompt={buildProductAiPrompt}
+                        hint={
+                            <>
+                                Тексти, наявність, штрихкод і видимість. Фото
+                                додаються нижче. Адреса сторінки:{" "}
+                                {slug ? `/product/${slug}` : "з’явиться після англійської назви"}
+                            </>
+                        }
+                    />
+                )}
 
                 <ProductImages
                     images={images}
@@ -163,19 +227,33 @@ export function ProductForm({ product }: ProductFormProps) {
                     onChange={setImages}
                 />
 
-                <ProductAvailability
-                    status={status}
-                    gtin={gtin}
-                    isHidden={isHidden}
-                    onStatusChange={setStatus}
-                    onGtinChange={setGtin}
-                    onIsHiddenChange={setIsHidden}
-                />
+                {mode === "manual" ? (
+                    <ProductAvailability
+                        status={status}
+                        gtin={gtin}
+                        isHidden={isHidden}
+                        onStatusChange={setStatus}
+                        onGtinChange={setGtin}
+                        onIsHiddenChange={setIsHidden}
+                    />
+                ) : null}
             </div>
 
-            {submitAttempted && !isFormValid ? (
+            {submitAttempted && jsonInvalid ? (
                 <div className="mt-6 text-sm text-[var(--error-primary)]">
-                    Заповніть обов&apos;язкові поля — вони підсвічені червоним
+                    Виправте помилку в JSON
+                </div>
+            ) : submitAttempted && !isFormValid ? (
+                <div className="mt-6 text-sm text-[var(--error-primary)]">
+                    {mode === "json" ? (
+                        <>
+                            Не заповнено або задовге
+                            {imagesInvalid ? " (і немає фото)" : ""}:{" "}
+                            {missingFields.join(" · ") || "—"}
+                        </>
+                    ) : (
+                        "Заповніть обов’язкові поля — вони підсвічені червоним"
+                    )}
                 </div>
             ) : null}
 

@@ -25,7 +25,7 @@ export async function CtaBlockView({ block }: CtaBlockViewProps) {
             ) : null}
 
             <ButtonLink
-                href={localizePath(locale, "/catalog")}
+                href={localizePath(locale, "/order")}
                 className="mt-[8px] rounded-[28px] border border-[var(--accent-primary)] bg-[var(--accent-primary)] px-[28px] py-[14px] text-[16px] font-semibold text-black hover:opacity-90 active:scale-[0.99]"
             >
                 {block.buttonLabel.trim() || dict.blog.ctaDefault}

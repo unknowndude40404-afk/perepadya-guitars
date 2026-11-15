@@ -28,6 +28,8 @@ import {
 import { Dropdown } from "@/shared/ui/dropdown";
 import { ConfirmDialog } from "@/shared/ui/confirm-dialog";
 
+import { isBlockEmpty } from "../../lib/block-structure";
+
 import { BlockCard } from "./BlockCard";
 import { TextBlockEditor } from "./TextBlockEditor";
 import { CalloutBlockEditor } from "./CalloutBlockEditor";
@@ -119,7 +121,13 @@ export function PostContent({
     function renderBlockEditor(block: PostBlock) {
         switch (block.type) {
             case "text":
-                return <TextBlockEditor block={block} onChange={updateBlock} />;
+                return (
+                    <TextBlockEditor
+                        block={block}
+                        invalid={showErrors && isBlockEmpty(block)}
+                        onChange={updateBlock}
+                    />
+                );
 
             case "image":
                 return (
@@ -140,20 +148,43 @@ export function PostContent({
                 );
 
             case "callout":
-                return <CalloutBlockEditor block={block} onChange={updateBlock} />;
+                return (
+                    <CalloutBlockEditor
+                        block={block}
+                        showErrors={showErrors}
+                        onChange={updateBlock}
+                    />
+                );
 
             case "cta":
-                return <CtaBlockEditor block={block} onChange={updateBlock} />;
+                return (
+                    <CtaBlockEditor
+                        block={block}
+                        showErrors={showErrors}
+                        onChange={updateBlock}
+                    />
+                );
 
             case "faq":
-                return <FaqBlockEditor block={block} onChange={updateBlock} />;
+                return (
+                    <FaqBlockEditor
+                        block={block}
+                        showErrors={showErrors}
+                        onChange={updateBlock}
+                    />
+                );
         }
     }
 
     return (
         <div className="rounded-2xl border border-[var(--border-primary)] bg-[var(--card-bg)] p-6">
-            <span className="mb-5 block text-sm font-medium text-[var(--text-primary)]">
+            <span className="block text-sm font-medium text-[var(--text-primary)]">
                 Вміст
+            </span>
+
+            <span className="mb-5 mt-1 block text-xs leading-5 text-[var(--text-secondary)]">
+                Блоки спільні для всіх мов: додавання, видалення, порядок і фото
+                однакові, а текст у кожній мові свій.
             </span>
 
             {blocks.length === 0 ? (
@@ -226,7 +257,7 @@ export function PostContent({
                 title="Видалити блок?"
                 description={
                     blockToDelete
-                        ? `Блок «${POST_BLOCK_LABELS[blockToDelete.type]}» буде видалено разом із вмістом.`
+                        ? `Блок «${POST_BLOCK_LABELS[blockToDelete.type]}» буде видалено в усіх мовах разом із вмістом.`
                         : undefined
                 }
                 confirmLabel="Видалити"

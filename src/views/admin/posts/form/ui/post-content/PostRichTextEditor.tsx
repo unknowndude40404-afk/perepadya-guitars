@@ -1,11 +1,10 @@
 "use client";
 
 import { useEditor, EditorContent } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
-import { TableKit } from "@tiptap/extension-table";
 import type { Editor, JSONContent } from "@tiptap/react";
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 
+import { POST_TEXT_EXTENSIONS } from "@/entities/post/config/text-extensions";
 import { Dropdown } from "@/shared/ui/dropdown";
 
 type ToolbarButtonProps = {
@@ -290,30 +289,18 @@ function Toolbar({ editor }: ToolbarProps) {
 type PostRichTextEditorProps = {
     value: JSONContent;
     onChange: (value: JSONContent) => void;
+    invalid?: boolean;
 };
 
-export function PostRichTextEditor({ value, onChange }: PostRichTextEditorProps) {
+export function PostRichTextEditor({
+    value,
+    onChange,
+    invalid = false,
+}: PostRichTextEditorProps) {
     const editor = useEditor({
         immediatelyRender: false,
 
-        extensions: [
-            StarterKit.configure({
-                heading: {
-                    levels: [2, 3],
-                },
-                link: {
-                    openOnClick: false,
-                    autolink: true,
-                    defaultProtocol: "https",
-                },
-            }),
-
-            TableKit.configure({
-                table: {
-                    resizable: false,
-                },
-            }),
-        ],
+        extensions: POST_TEXT_EXTENSIONS,
 
         content: value,
 
@@ -329,6 +316,17 @@ export function PostRichTextEditor({ value, onChange }: PostRichTextEditorProps)
         },
     });
 
+    // Content can change from outside (copy from another language, JSON mode).
+    useEffect(() => {
+        if (!editor || editor.isDestroyed) {
+            return;
+        }
+
+        if (JSON.stringify(editor.getJSON()) !== JSON.stringify(value)) {
+            editor.commands.setContent(value, { emitUpdate: false });
+        }
+    }, [editor, value]);
+
     if (!editor) {
         return (
             <div className="min-h-[230px] rounded-2xl border border-[var(--border-primary)] bg-[var(--bg-primary)]" />
@@ -336,7 +334,12 @@ export function PostRichTextEditor({ value, onChange }: PostRichTextEditorProps)
     }
 
     return (
-        <div className="overflow-hidden rounded-2xl border border-[var(--border-primary)] bg-[var(--bg-primary)] transition-all duration-300 focus-within:border-[var(--border-hover)]">
+        <div
+            className={`overflow-hidden rounded-2xl border bg-[var(--bg-primary)] transition-all duration-300 ${invalid
+                ? "border-[var(--error-primary)]"
+                : "border-[var(--border-primary)] focus-within:border-[var(--border-hover)]"
+                }`}
+        >
             <Toolbar editor={editor} />
 
             <EditorContent editor={editor} />

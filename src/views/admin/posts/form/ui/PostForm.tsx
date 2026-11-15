@@ -18,6 +18,29 @@ import {
     type Locale,
 } from "@/shared/i18n/config";
 import { LocaleTabs } from "@/shared/ui/locale-tabs";
+import {
+    EditModeSwitch,
+    JsonEditor,
+    type EditMode,
+} from "@/shared/ui/json-editor";
+
+import {
+    SEO_DESCRIPTION_MAX,
+    SEO_TITLE_MAX,
+    buildPostAiPrompt,
+    postJsonSchema,
+    textsFromPostJson,
+    toPostJson,
+    type PostJson,
+    type PostTextDraft,
+    type PostTextsDraft,
+} from "../lib/post-json";
+import {
+    alignBlocksToDefault,
+    fillEmptyBlocks,
+    isBlockEmpty,
+    syncBlockStructure,
+} from "../lib/block-structure";
 
 import { PostBasics } from "./PostBasics";
 import { PostCover } from "./PostCover";
@@ -28,17 +51,8 @@ type PostFormProps = {
     post?: AdminPost;
 };
 
-type PostTextDraft = {
-    title: string;
-    blocks: PostBlock[];
-    seoTitle: string;
-    seoDescription: string;
-};
-
-type PostTextsDraft = Record<Locale, PostTextDraft>;
-
 function toTextsDraft(post?: AdminPost): PostTextsDraft {
-    return Object.fromEntries(
+    const texts = Object.fromEntries(
         LOCALES.map((locale) => {
             const item = post?.translations[locale];
 
@@ -53,6 +67,8 @@ function toTextsDraft(post?: AdminPost): PostTextsDraft {
             ];
         }),
     ) as PostTextsDraft;
+
+    return alignBlocksToDefault(texts);
 }
 
 function hasAnyContent(text: PostTextDraft) {
@@ -64,35 +80,32 @@ function hasAnyContent(text: PostTextDraft) {
     );
 }
 
-const SEO_TITLE_MAX = 60;
-const SEO_DESCRIPTION_MAX = 160;
-
 function isTitleMissing(text: PostTextDraft) {
     return !text.title.trim();
 }
 
-function hasTextErrors(text: PostTextDraft) {
+/** Names of fields that are empty or too long, for the JSON mode summary. */
+function getTextErrorFields(text: PostTextDraft) {
     const seoTitle = text.seoTitle.trim();
     const seoDescription = text.seoDescription.trim();
 
-    return (
-        isTitleMissing(text) ||
-        text.blocks.length === 0 ||
-        !seoTitle ||
-        seoTitle.length > SEO_TITLE_MAX ||
-        !seoDescription ||
-        seoDescription.length > SEO_DESCRIPTION_MAX ||
+    return [
+        isTitleMissing(text) && "title",
+        text.blocks.length === 0 && "blocks",
+        (!seoTitle || seoTitle.length > SEO_TITLE_MAX) && "seoTitle",
+        (!seoDescription || seoDescription.length > SEO_DESCRIPTION_MAX) &&
+        "seoDescription",
         text.blocks.some(
-            (block) => block.type === "image" && !block.alt.trim(),
-        )
-    );
+            (block) => block.type !== "image" && isBlockEmpty(block),
+        ) && "content",
+        text.blocks.some(
+            (block) => block.type === "image" && isBlockEmpty(block),
+        ) && "alt",
+    ].filter((field): field is string => Boolean(field));
 }
 
-function cloneBlocks(blocks: PostBlock[]): PostBlock[] {
-    return blocks.map((block) => ({
-        ...structuredClone(block),
-        id: crypto.randomUUID(),
-    }));
+function hasTextErrors(text: PostTextDraft) {
+    return getTextErrorFields(text).length > 0;
 }
 
 type CoverUploadResult =
@@ -122,6 +135,9 @@ export function PostForm({ post }: PostFormProps) {
     const [status, setStatus] = useState<PostStatus>(
         post?.status ?? "published",
     );
+
+    const [mode, setMode] = useState<EditMode>("manual");
+    const [jsonError, setJsonError] = useState<string | null>(null);
 
     const [submitAttempted, setSubmitAttempted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -168,7 +184,25 @@ export function PostForm({ post }: PostFormProps) {
 
     const imagesInvalid = LOCALES.some(isImageMissing);
 
-    const isFormValid = !titlesInvalid && !imagesInvalid;
+    const jsonInvalid = mode === "json" && Boolean(jsonError);
+
+    const isFormValid = !titlesInvalid && !imagesInvalid && !jsonInvalid;
+
+    const missingFields = LOCALES.flatMap((locale) => {
+        const fields = getTextErrorFields(texts[locale]);
+
+        if (isImageMissing(locale)) {
+            fields.push("image");
+        }
+
+        return fields.length ? [`${locale}: ${fields.join(", ")}`] : [];
+    });
+
+    function applyJson(data: PostJson) {
+        setTexts((prev) => alignBlocksToDefault(textsFromPostJson(data, prev)));
+        setStatus(data.status);
+        setTitleTaken(false);
+    }
 
     function updateActiveText(patch: Partial<PostTextDraft>) {
         setTexts((prev) => ({
@@ -182,16 +216,27 @@ export function PostForm({ post }: PostFormProps) {
     ) {
         const locale = activeLocale;
 
-        setTexts((prev) => ({
-            ...prev,
-            [locale]: {
-                ...prev[locale],
-                blocks:
-                    typeof action === "function"
-                        ? action(prev[locale].blocks)
-                        : action,
-            },
-        }));
+        // Block structure is shared: adding, removing or moving a block (or
+        // changing its image) here does the same in every other language.
+        setTexts((prev) => {
+            const blocks =
+                typeof action === "function"
+                    ? action(prev[locale].blocks)
+                    : action;
+
+            return Object.fromEntries(
+                LOCALES.map((item) => [
+                    item,
+                    {
+                        ...prev[item],
+                        blocks:
+                            item === locale
+                                ? blocks
+                                : syncBlockStructure(blocks, prev[item].blocks),
+                    },
+                ]),
+            ) as PostTextsDraft;
+        });
     }
 
     function handleTitleChange(value: string) {
@@ -202,7 +247,9 @@ export function PostForm({ post }: PostFormProps) {
     function handleCopyFromDefault() {
         const source = texts[DEFAULT_LOCALE];
 
-        updateActiveText({ blocks: cloneBlocks(source.blocks) });
+        updateActiveText({
+            blocks: fillEmptyBlocks(source.blocks, activeText.blocks),
+        });
     }
 
     function handleCoverFileSelect(file: File) {
@@ -444,65 +491,95 @@ export function PostForm({ post }: PostFormProps) {
                 {isEdit ? "Редагувати пост" : "Новий пост"}
             </h1>
 
+            <div className="mb-6">
+                <EditModeSwitch
+                    value={mode}
+                    onChange={setMode}
+                    jsonError={jsonError}
+                />
+            </div>
+
             <div className="flex flex-col gap-6">
-                <div className="rounded-2xl border border-[var(--border-primary)] bg-[var(--card-bg)] p-6">
-                    <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                        <span className="text-sm font-medium text-[var(--text-primary)]">
-                            Мова тексту
-                        </span>
+                {mode === "manual" ? (
+                    <>
+                        <div className="rounded-2xl border border-[var(--border-primary)] bg-[var(--card-bg)] p-6">
+                            <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+                                <span className="text-sm font-medium text-[var(--text-primary)]">
+                                    Мова тексту
+                                </span>
 
-                        <span className="text-xs text-[var(--text-secondary)]">
-                            Усі поля обов’язкові для кожної мови
-                        </span>
-                    </div>
+                                <span className="text-xs text-[var(--text-secondary)]">
+                                    Усі поля обов’язкові для кожної мови
+                                </span>
+                            </div>
 
-                    <LocaleTabs
-                        value={activeLocale}
-                        onChange={setActiveLocale}
-                        isFilled={(locale) => Boolean(texts[locale].title.trim())}
-                        isInvalid={(locale) =>
-                            submitAttempted &&
-                            (hasTextErrors(texts[locale]) ||
-                                isImageMissing(locale))
+                            <LocaleTabs
+                                value={activeLocale}
+                                onChange={setActiveLocale}
+                                isFilled={(locale) => Boolean(texts[locale].title.trim())}
+                                isInvalid={(locale) =>
+                                    submitAttempted &&
+                                    (hasTextErrors(texts[locale]) ||
+                                        isImageMissing(locale))
+                                }
+                            />
+
+                            <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-[var(--text-secondary)]">
+                                <span>
+                                    {LOCALE_META[activeLocale].nativeName}
+                                    {!hasAnyContent(activeText)
+                                        ? " — ще не заповнено"
+                                        : null}
+                                    {activeLocale === DEFAULT_LOCALE && slug
+                                        ? ` · адреса: /blog/${slug}`
+                                        : null}
+                                </span>
+
+                                {activeLocale !== DEFAULT_LOCALE &&
+                                    activeText.blocks.some(isBlockEmpty) &&
+                                    texts[DEFAULT_LOCALE].blocks.some(
+                                        (block) => !isBlockEmpty(block),
+                                    ) ? (
+                                    <button
+                                        type="button"
+                                        onClick={handleCopyFromDefault}
+                                        className="cursor-pointer text-[var(--accent-primary)] transition hover:opacity-80"
+                                    >
+                                        Скопіювати текст з EN у порожні блоки
+                                    </button>
+                                ) : null}
+                            </div>
+                        </div>
+
+                        <PostBasics
+                            title={title}
+                            status={status}
+                            titleInvalid={
+                                (submitAttempted &&
+                                    isTitleMissing(activeText)) ||
+                                (titleTaken && activeLocale === DEFAULT_LOCALE)
+                            }
+                            onTitleChange={handleTitleChange}
+                            onStatusChange={setStatus}
+                        />
+                    </>
+                ) : (
+                    <JsonEditor
+                        initialValue={toPostJson({ texts, status })}
+                        schema={postJsonSchema}
+                        onChange={applyJson}
+                        onErrorChange={setJsonError}
+                        getAiPrompt={buildPostAiPrompt}
+                        hint={
+                            <>
+                                Заголовки, SEO, статус і блоки для всіх мов.
+                                Текст — у полі &quot;html&quot;. Обкладинка
+                                і фото в блоках завантажуються вручну. Адреса:{" "}
+                                {slug ? `/blog/${slug}` : "з’явиться після англійського заголовка"}
+                            </>
                         }
                     />
-
-                    <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-[var(--text-secondary)]">
-                        <span>
-                            {LOCALE_META[activeLocale].nativeName}
-                            {!hasAnyContent(activeText)
-                                ? " — ще не заповнено"
-                                : null}
-                            {activeLocale === DEFAULT_LOCALE && slug
-                                ? ` · адреса: /blog/${slug}`
-                                : null}
-                        </span>
-
-                        {activeLocale !== DEFAULT_LOCALE &&
-                            !activeText.blocks.length &&
-                            texts[DEFAULT_LOCALE].blocks.length ? (
-                            <button
-                                type="button"
-                                onClick={handleCopyFromDefault}
-                                className="cursor-pointer text-[var(--accent-primary)] transition hover:opacity-80"
-                            >
-                                Скопіювати блоки з EN
-                            </button>
-                        ) : null}
-                    </div>
-                </div>
-
-                <PostBasics
-                    title={title}
-                    status={status}
-                    titleInvalid={
-                        (submitAttempted &&
-                            isTitleMissing(activeText)) ||
-                        (titleTaken && activeLocale === DEFAULT_LOCALE)
-                    }
-                    onTitleChange={handleTitleChange}
-                    onStatusChange={setStatus}
-                />
+                )}
 
                 <PostCover
                     coverUrl={coverUrl}
@@ -511,32 +588,42 @@ export function PostForm({ post }: PostFormProps) {
                     onRemove={handleCoverRemove}
                 />
 
-                <PostContent
-                    key={activeLocale}
-                    blocks={blocks}
-                    pendingImages={pendingImages}
-                    coverUrl={coverUrl}
-                    pendingCoverFile={pendingCover?.file ?? null}
-                    showErrors={submitAttempted}
-                    onChange={setBlocks}
-                    onPendingImageChange={handlePendingImageChange}
-                    onMakeCover={handleMakeCoverFromBlock}
-                />
+                {mode === "manual" ? (
+                    <>
+                        <PostContent
+                            key={activeLocale}
+                            blocks={blocks}
+                            pendingImages={pendingImages}
+                            coverUrl={coverUrl}
+                            pendingCoverFile={pendingCover?.file ?? null}
+                            showErrors={submitAttempted}
+                            onChange={setBlocks}
+                            onPendingImageChange={handlePendingImageChange}
+                            onMakeCover={handleMakeCoverFromBlock}
+                        />
 
-                <PostSeo
-                    showErrors={submitAttempted}
-                    seoTitle={activeText.seoTitle}
-                    seoDescription={activeText.seoDescription}
-                    onSeoTitleChange={(value) => updateActiveText({ seoTitle: value })}
-                    onSeoDescriptionChange={(value) =>
-                        updateActiveText({ seoDescription: value })
-                    }
-                />
+                        <PostSeo
+                            showErrors={submitAttempted}
+                            seoTitle={activeText.seoTitle}
+                            seoDescription={activeText.seoDescription}
+                            onSeoTitleChange={(value) => updateActiveText({ seoTitle: value })}
+                            onSeoDescriptionChange={(value) =>
+                                updateActiveText({ seoDescription: value })
+                            }
+                        />
+                    </>
+                ) : null}
             </div>
 
-            {submitAttempted && !isFormValid ? (
+            {submitAttempted && jsonInvalid ? (
                 <div className="mt-6 text-sm text-[var(--error-primary)]">
-                    Заповніть обов’язкові поля — вони підсвічені червоним
+                    Виправте помилку в JSON
+                </div>
+            ) : submitAttempted && !isFormValid ? (
+                <div className="mt-6 text-sm text-[var(--error-primary)]">
+                    {mode === "json"
+                        ? `Не заповнено або задовге: ${missingFields.join(" · ") || "—"}`
+                        : "Заповніть обов’язкові поля — вони підсвічені червоним"}
                 </div>
             ) : null}
 

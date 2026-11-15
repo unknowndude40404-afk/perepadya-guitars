@@ -12,7 +12,7 @@ export const POST_BLOCK_LABELS: Record<PostBlockType, string> = {
     text: "Текст",
     image: "Зображення",
     callout: "Примітка",
-    cta: "Кнопка на вітрину",
+    cta: "Кнопка «Залишити заявку»",
     faq: "Питання — відповідь",
 };
 

@@ -21,9 +21,14 @@ function isCalloutVariant(value: string): value is CalloutVariant {
 type CalloutBlockEditorProps = {
     block: CalloutBlock;
     onChange: (block: CalloutBlock) => void;
+    showErrors?: boolean;
 };
 
-export function CalloutBlockEditor({ block, onChange }: CalloutBlockEditorProps) {
+export function CalloutBlockEditor({
+    block,
+    onChange,
+    showErrors = false,
+}: CalloutBlockEditorProps) {
     return (
         <div className="flex flex-col gap-4">
             <div>
@@ -73,6 +78,7 @@ export function CalloutBlockEditor({ block, onChange }: CalloutBlockEditorProps)
                         onChange({ ...block, text: event.target.value })
                     }
                     placeholder="Текст"
+                    invalid={showErrors && !block.text.trim()}
                     rows={3}
                 />
             </div>

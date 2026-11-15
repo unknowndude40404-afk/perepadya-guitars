@@ -7,9 +7,14 @@ import { Textarea } from "@/shared/ui/textarea";
 type FaqBlockEditorProps = {
     block: FaqBlock;
     onChange: (block: FaqBlock) => void;
+    showErrors?: boolean;
 };
 
-export function FaqBlockEditor({ block, onChange }: FaqBlockEditorProps) {
+export function FaqBlockEditor({
+    block,
+    onChange,
+    showErrors = false,
+}: FaqBlockEditorProps) {
     function updateItem(next: FaqItem) {
         onChange({
             ...block,
@@ -60,6 +65,7 @@ export function FaqBlockEditor({ block, onChange }: FaqBlockEditorProps) {
                                 updateItem({ ...item, question: event.target.value })
                             }
                             placeholder="Питання"
+                            invalid={showErrors && !item.question.trim()}
                         />
 
                         <Textarea
@@ -68,6 +74,7 @@ export function FaqBlockEditor({ block, onChange }: FaqBlockEditorProps) {
                                 updateItem({ ...item, answer: event.target.value })
                             }
                             placeholder="Відповідь"
+                            invalid={showErrors && !item.answer.trim()}
                             rows={3}
                         />
                     </div>
