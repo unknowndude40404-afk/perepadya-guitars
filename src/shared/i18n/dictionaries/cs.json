@@ -1,0 +1,118 @@
+{
+    "site": {
+        "title": "Perepadya Guitars — kytary a baskytary",
+        "description": "Perepadya Guitars — kytary a baskytary ✔ Skladem i na objednávku ➤ Vitrína nástrojů s fotkami a popisy",
+        "productDescription": "{name} — Perepadya Guitars ✔ Kytary a baskytary skladem i na objednávku"
+    },
+    "nav": {
+        "home": "Domů",
+        "showcase": "Vitrína",
+        "blog": "Blog",
+        "about": "O nás",
+        "order": "Nezávazná poptávka",
+        "menu": "Menu",
+        "openMenu": "Otevřít menu",
+        "closeMenu": "Zavřít menu"
+    },
+    "footer": {
+        "socials": "Sociální sítě",
+        "rights": "Všechna práva vyhrazena"
+    },
+    "catalog": {
+        "title": "Vitrína",
+        "searchPlaceholder": "Hledat produkty...",
+        "sort": "Řazení",
+        "sortByDate": "Podle data",
+        "sortByName": "Podle názvu",
+        "sortByStatus": "Podle dostupnosti",
+        "emptyTitle": "Nic nenalezeno",
+        "emptyHint": "Zkuste změnit hledaný výraz."
+    },
+    "product": {
+        "notFound": "Produkt nenalezen",
+        "order": "Objednat",
+        "showImage": "Zobrazit obrázek {index}",
+        "status": {
+            "in_stock": "Skladem",
+            "on_order": "Na objednávku"
+        }
+    },
+    "blog": {
+        "title": "Blog",
+        "description": "Články Perepadya Guitars o kytarách: výběr nástroje, seřízení a péče.",
+        "pageTitle": "Blog — strana {page}",
+        "searchPlaceholder": "Hledat",
+        "searchLabel": "Hledat články",
+        "sort": "Řazení",
+        "sortByDate": "Podle data zveřejnění",
+        "empty": "Zatím žádné články",
+        "notFound": "Nic nenalezeno",
+        "ctaDefault": "Přejít do vitríny",
+        "callout": {
+            "info": "Informace",
+            "tip": "Tip",
+            "warning": "Upozornění"
+        }
+    },
+    "about": {
+        "title": "O nás",
+        "description": "O Perepadya Guitars: kytary a baskytary skladem i na objednávku.",
+        "paragraphs": [
+            "Perepadya Guitars — kytary a baskytary. Ve vitríně najdete nástroje s fotkami a popisy.",
+            "U každého nástroje je uvedeno, zda je skladem, nebo zda jej lze objednat."
+        ]
+    },
+    "order": {
+        "title": "Nezávazná poptávka",
+        "description": "Zanechte jméno a telefon nebo e-mail — ozveme se vám a odpovíme na vaše otázky.",
+        "subtitle": "Zanechte kontakt — odpovíme na vaše otázky",
+        "name": "Jméno",
+        "namePlaceholder": "Vaše jméno",
+        "contactMethod": "Jak vás máme kontaktovat",
+        "contactMethodLabel": "Způsob kontaktu",
+        "phone": "Telefon",
+        "email": "E-mail",
+        "phoneLabel": "Telefonní číslo s předvolbou země",
+        "phonePlaceholder": "420 601 234 567",
+        "emailLabel": "E-mail",
+        "message": "Zpráva (nepovinné)",
+        "messagePlaceholder": "Na co se chcete zeptat?",
+        "required": "Vyplňte povinná pole — jsou zvýrazněna červeně",
+        "submit": "Odeslat poptávku",
+        "sendError": "Poptávku se nepodařilo odeslat. Zkuste to prosím za chvíli znovu.",
+        "successTitle": "Děkujeme, poptávku jsme přijali!",
+        "successText": "Brzy se vám ozveme",
+        "toShowcase": "Do vitríny"
+    },
+    "notFound": {
+        "title": "Stránka nenalezena",
+        "text": "Stránka mohla být odstraněna nebo je odkaz nesprávný.",
+        "home": "Domů",
+        "showcase": "Do vitríny"
+    },
+    "pagination": {
+        "prev": "Předchozí strana",
+        "next": "Další strana",
+        "pages": "Strany"
+    },
+    "languageSwitcher": {
+        "button": "Jazyk",
+        "title": "Vyberte jazyk",
+        "close": "Zavřít"
+    },
+    "languages": {
+        "en": "Angličtina",
+        "uk": "Ukrajinština",
+        "de": "Němčina",
+        "fr": "Francouzština",
+        "it": "Italština",
+        "es": "Španělština",
+        "pl": "Polština",
+        "ro": "Rumunština",
+        "nl": "Nizozemština",
+        "tr": "Turečtina",
+        "pt": "Portugalština",
+        "hu": "Maďarština",
+        "cs": "Čeština"
+    }
+}

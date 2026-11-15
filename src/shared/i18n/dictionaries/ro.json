@@ -1,0 +1,118 @@
+{
+    "site": {
+        "title": "Perepadya Guitars — chitare și chitare bas",
+        "description": "Perepadya Guitars — chitare și chitare bas ✔ În stoc și la comandă ➤ Vitrină de instrumente cu fotografii și descrieri",
+        "productDescription": "{name} — Perepadya Guitars ✔ Chitare și chitare bas în stoc și la comandă"
+    },
+    "nav": {
+        "home": "Acasă",
+        "showcase": "Vitrină",
+        "blog": "Blog",
+        "about": "Despre noi",
+        "order": "Trimite o cerere",
+        "menu": "Meniu",
+        "openMenu": "Deschide meniul",
+        "closeMenu": "Închide meniul"
+    },
+    "footer": {
+        "socials": "Rețele sociale",
+        "rights": "Toate drepturile rezervate"
+    },
+    "catalog": {
+        "title": "Vitrină",
+        "searchPlaceholder": "Caută produse...",
+        "sort": "Sortare",
+        "sortByDate": "După dată",
+        "sortByName": "După nume",
+        "sortByStatus": "După disponibilitate",
+        "emptyTitle": "Nu s-a găsit nimic",
+        "emptyHint": "Încearcă o altă căutare."
+    },
+    "product": {
+        "notFound": "Produsul nu a fost găsit",
+        "order": "Comandă",
+        "showImage": "Afișează imaginea {index}",
+        "status": {
+            "in_stock": "În stoc",
+            "on_order": "La comandă"
+        }
+    },
+    "blog": {
+        "title": "Blog",
+        "description": "Articole Perepadya Guitars despre chitare: alegerea instrumentului, reglaj și îngrijire.",
+        "pageTitle": "Blog — pagina {page}",
+        "searchPlaceholder": "Caută",
+        "searchLabel": "Caută articole",
+        "sort": "Sortare",
+        "sortByDate": "După data publicării",
+        "empty": "Încă nu există articole",
+        "notFound": "Nu s-a găsit nimic",
+        "ctaDefault": "Mergi la vitrină",
+        "callout": {
+            "info": "Informație",
+            "tip": "Sfat",
+            "warning": "Atenție"
+        }
+    },
+    "about": {
+        "title": "Despre noi",
+        "description": "Despre Perepadya Guitars: chitare și chitare bas în stoc și la comandă.",
+        "paragraphs": [
+            "Perepadya Guitars — chitare și chitare bas. În vitrină găsești instrumente cu fotografii și descrieri.",
+            "La fiecare instrument este indicat dacă este în stoc sau poate fi comandat."
+        ]
+    },
+    "order": {
+        "title": "Trimite o cerere",
+        "description": "Lasă-ne numele și telefonul sau e-mailul — te vom contacta și vom răspunde la întrebări.",
+        "subtitle": "Lasă un contact — vom răspunde la întrebările tale",
+        "name": "Nume",
+        "namePlaceholder": "Numele tău",
+        "contactMethod": "Cum te putem contacta",
+        "contactMethodLabel": "Mod de contact",
+        "phone": "Telefon",
+        "email": "E-mail",
+        "phoneLabel": "Număr de telefon cu prefixul țării",
+        "phonePlaceholder": "40 712 345 678",
+        "emailLabel": "E-mail",
+        "message": "Mesaj (opțional)",
+        "messagePlaceholder": "Ce dorești să afli?",
+        "required": "Completează câmpurile obligatorii — sunt marcate cu roșu",
+        "submit": "Trimite cererea",
+        "sendError": "Cererea nu a putut fi trimisă. Încearcă din nou puțin mai târziu.",
+        "successTitle": "Mulțumim, am primit cererea ta!",
+        "successText": "Te vom contacta în curând",
+        "toShowcase": "Mergi la vitrină"
+    },
+    "notFound": {
+        "title": "Pagina nu a fost găsită",
+        "text": "Pagina poate să fi fost ștearsă sau linkul este greșit.",
+        "home": "Acasă",
+        "showcase": "Mergi la vitrină"
+    },
+    "pagination": {
+        "prev": "Pagina anterioară",
+        "next": "Pagina următoare",
+        "pages": "Pagini"
+    },
+    "languageSwitcher": {
+        "button": "Limbă",
+        "title": "Alege limba",
+        "close": "Închide"
+    },
+    "languages": {
+        "en": "Engleză",
+        "uk": "Ucraineană",
+        "de": "Germană",
+        "fr": "Franceză",
+        "it": "Italiană",
+        "es": "Spaniolă",
+        "pl": "Poloneză",
+        "ro": "Română",
+        "nl": "Neerlandeză",
+        "tr": "Turcă",
+        "pt": "Portugheză",
+        "hu": "Maghiară",
+        "cs": "Cehă"
+    }
+}

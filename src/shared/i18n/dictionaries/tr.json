@@ -1,0 +1,118 @@
+{
+    "site": {
+        "title": "Perepadya Guitars — gitarlar ve bas gitarlar",
+        "description": "Perepadya Guitars — gitarlar ve bas gitarlar ✔ Stokta ve siparişle ➤ Fotoğraflı ve açıklamalı enstrüman vitrini",
+        "productDescription": "{name} — Perepadya Guitars ✔ Stokta ve siparişle gitarlar ve bas gitarlar"
+    },
+    "nav": {
+        "home": "Ana sayfa",
+        "showcase": "Vitrin",
+        "blog": "Blog",
+        "about": "Hakkımızda",
+        "order": "Talep gönder",
+        "menu": "Menü",
+        "openMenu": "Menüyü aç",
+        "closeMenu": "Menüyü kapat"
+    },
+    "footer": {
+        "socials": "Sosyal medya",
+        "rights": "Tüm hakları saklıdır"
+    },
+    "catalog": {
+        "title": "Vitrin",
+        "searchPlaceholder": "Ürün ara...",
+        "sort": "Sıralama",
+        "sortByDate": "Tarihe göre",
+        "sortByName": "Ada göre",
+        "sortByStatus": "Stok durumuna göre",
+        "emptyTitle": "Hiçbir şey bulunamadı",
+        "emptyHint": "Farklı bir arama deneyin."
+    },
+    "product": {
+        "notFound": "Ürün bulunamadı",
+        "order": "Sipariş ver",
+        "showImage": "{index}. görseli göster",
+        "status": {
+            "in_stock": "Stokta",
+            "on_order": "Siparişle"
+        }
+    },
+    "blog": {
+        "title": "Blog",
+        "description": "Perepadya Guitars’tan gitar yazıları: enstrüman seçimi, ayar ve bakım.",
+        "pageTitle": "Blog — sayfa {page}",
+        "searchPlaceholder": "Ara",
+        "searchLabel": "Yazılarda ara",
+        "sort": "Sıralama",
+        "sortByDate": "Yayın tarihine göre",
+        "empty": "Henüz yazı yok",
+        "notFound": "Hiçbir şey bulunamadı",
+        "ctaDefault": "Vitrine git",
+        "callout": {
+            "info": "Bilgi",
+            "tip": "İpucu",
+            "warning": "Dikkat"
+        }
+    },
+    "about": {
+        "title": "Hakkımızda",
+        "description": "Perepadya Guitars hakkında: stokta ve siparişle gitarlar ve bas gitarlar.",
+        "paragraphs": [
+            "Perepadya Guitars — gitarlar ve bas gitarlar. Vitrinde fotoğraflı ve açıklamalı enstrümanlar bulunur.",
+            "Her enstrümanın stokta olup olmadığı ya da sipariş edilebileceği belirtilir."
+        ]
+    },
+    "order": {
+        "title": "Talep gönder",
+        "description": "Adınızı ve telefon numaranızı ya da e-postanızı bırakın — size dönüş yapıp sorularınızı yanıtlayalım.",
+        "subtitle": "İletişim bilgilerinizi bırakın — sorularınızı yanıtlayalım",
+        "name": "Ad",
+        "namePlaceholder": "Adınız",
+        "contactMethod": "Size nasıl ulaşalım",
+        "contactMethodLabel": "İletişim yöntemi",
+        "phone": "Telefon",
+        "email": "E-posta",
+        "phoneLabel": "Ülke koduyla telefon numarası",
+        "phonePlaceholder": "90 532 123 4567",
+        "emailLabel": "E-posta",
+        "message": "Mesaj (isteğe bağlı)",
+        "messagePlaceholder": "Ne sormak istersiniz?",
+        "required": "Zorunlu alanları doldurun — kırmızıyla işaretlendiler",
+        "submit": "Talebi gönder",
+        "sendError": "Talep gönderilemedi. Lütfen biraz sonra tekrar deneyin.",
+        "successTitle": "Teşekkürler, talebinizi aldık!",
+        "successText": "En kısa sürede sizinle iletişime geçeceğiz",
+        "toShowcase": "Vitrine git"
+    },
+    "notFound": {
+        "title": "Sayfa bulunamadı",
+        "text": "Sayfa kaldırılmış olabilir veya bağlantı yanlış.",
+        "home": "Ana sayfa",
+        "showcase": "Vitrine git"
+    },
+    "pagination": {
+        "prev": "Önceki sayfa",
+        "next": "Sonraki sayfa",
+        "pages": "Sayfalar"
+    },
+    "languageSwitcher": {
+        "button": "Dil",
+        "title": "Bir dil seçin",
+        "close": "Kapat"
+    },
+    "languages": {
+        "en": "İngilizce",
+        "uk": "Ukraynaca",
+        "de": "Almanca",
+        "fr": "Fransızca",
+        "it": "İtalyanca",
+        "es": "İspanyolca",
+        "pl": "Lehçe",
+        "ro": "Rumence",
+        "nl": "Felemenkçe",
+        "tr": "Türkçe",
+        "pt": "Portekizce",
+        "hu": "Macarca",
+        "cs": "Çekçe"
+    }
+}

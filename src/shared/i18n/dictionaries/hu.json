@@ -1,0 +1,118 @@
+{
+    "site": {
+        "title": "Perepadya Guitars — gitárok és basszusgitárok",
+        "description": "Perepadya Guitars — gitárok és basszusgitárok ✔ Raktáron és rendelésre ➤ Hangszervitrin fotókkal és leírásokkal",
+        "productDescription": "{name} — Perepadya Guitars ✔ Gitárok és basszusgitárok raktáron és rendelésre"
+    },
+    "nav": {
+        "home": "Főoldal",
+        "showcase": "Vitrin",
+        "blog": "Blog",
+        "about": "Rólunk",
+        "order": "Ajánlatkérés",
+        "menu": "Menü",
+        "openMenu": "Menü megnyitása",
+        "closeMenu": "Menü bezárása"
+    },
+    "footer": {
+        "socials": "Közösségi média",
+        "rights": "Minden jog fenntartva"
+    },
+    "catalog": {
+        "title": "Vitrin",
+        "searchPlaceholder": "Termékek keresése...",
+        "sort": "Rendezés",
+        "sortByDate": "Dátum szerint",
+        "sortByName": "Név szerint",
+        "sortByStatus": "Elérhetőség szerint",
+        "emptyTitle": "Nincs találat",
+        "emptyHint": "Próbálkozzon más keresőkifejezéssel."
+    },
+    "product": {
+        "notFound": "A termék nem található",
+        "order": "Megrendelem",
+        "showImage": "{index}. kép megjelenítése",
+        "status": {
+            "in_stock": "Raktáron",
+            "on_order": "Rendelésre"
+        }
+    },
+    "blog": {
+        "title": "Blog",
+        "description": "A Perepadya Guitars cikkei a gitárokról: hangszerválasztás, beállítás és ápolás.",
+        "pageTitle": "Blog — {page}. oldal",
+        "searchPlaceholder": "Keresés",
+        "searchLabel": "Cikkek keresése",
+        "sort": "Rendezés",
+        "sortByDate": "Megjelenés dátuma szerint",
+        "empty": "Még nincsenek cikkek",
+        "notFound": "Nincs találat",
+        "ctaDefault": "Tovább a vitrinhez",
+        "callout": {
+            "info": "Információ",
+            "tip": "Tipp",
+            "warning": "Figyelem"
+        }
+    },
+    "about": {
+        "title": "Rólunk",
+        "description": "A Perepadya Guitarsról: gitárok és basszusgitárok raktáron és rendelésre.",
+        "paragraphs": [
+            "Perepadya Guitars — gitárok és basszusgitárok. A vitrinben fotókkal és leírásokkal ellátott hangszereket talál.",
+            "Minden hangszernél fel van tüntetve, hogy raktáron van-e, vagy megrendelhető."
+        ]
+    },
+    "order": {
+        "title": "Ajánlatkérés",
+        "description": "Adja meg nevét és telefonszámát vagy e-mail-címét — felvesszük Önnel a kapcsolatot és válaszolunk kérdéseire.",
+        "subtitle": "Hagyja meg elérhetőségét — válaszolunk kérdéseire",
+        "name": "Név",
+        "namePlaceholder": "Az Ön neve",
+        "contactMethod": "Hogyan vegyük fel Önnel a kapcsolatot",
+        "contactMethodLabel": "Kapcsolattartás módja",
+        "phone": "Telefon",
+        "email": "E-mail",
+        "phoneLabel": "Telefonszám országkóddal",
+        "phonePlaceholder": "36 20 123 4567",
+        "emailLabel": "E-mail",
+        "message": "Üzenet (nem kötelező)",
+        "messagePlaceholder": "Mit szeretne kérdezni?",
+        "required": "Töltse ki a kötelező mezőket — pirossal vannak jelölve",
+        "submit": "Ajánlatkérés küldése",
+        "sendError": "Nem sikerült elküldeni a kérést. Kérjük, próbálja újra kicsit később.",
+        "successTitle": "Köszönjük, megkaptuk a kérését!",
+        "successText": "Hamarosan felvesszük Önnel a kapcsolatot",
+        "toShowcase": "Tovább a vitrinhez"
+    },
+    "notFound": {
+        "title": "Az oldal nem található",
+        "text": "Lehet, hogy az oldalt törölték, vagy hibás a hivatkozás.",
+        "home": "Főoldal",
+        "showcase": "Tovább a vitrinhez"
+    },
+    "pagination": {
+        "prev": "Előző oldal",
+        "next": "Következő oldal",
+        "pages": "Oldalak"
+    },
+    "languageSwitcher": {
+        "button": "Nyelv",
+        "title": "Válasszon nyelvet",
+        "close": "Bezárás"
+    },
+    "languages": {
+        "en": "Angol",
+        "uk": "Ukrán",
+        "de": "Német",
+        "fr": "Francia",
+        "it": "Olasz",
+        "es": "Spanyol",
+        "pl": "Lengyel",
+        "ro": "Román",
+        "nl": "Holland",
+        "tr": "Török",
+        "pt": "Portugál",
+        "hu": "Magyar",
+        "cs": "Cseh"
+    }
+}

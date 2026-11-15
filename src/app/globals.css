@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@import "./variables.css";
+@import "./reset.css";
+@import "./rich-text.css";
+
+@import "yet-another-react-lightbox/styles.css";
+@import "yet-another-react-lightbox/plugins/thumbnails.css";
+@import "yet-another-react-lightbox/plugins/counter.css";

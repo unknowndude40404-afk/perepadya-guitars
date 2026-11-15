@@ -1,0 +1,118 @@
+{
+    "site": {
+        "title": "Perepadya Guitars — gitaren en basgitaren",
+        "description": "Perepadya Guitars — gitaren en basgitaren ✔ Op voorraad en op bestelling ➤ Etalage van instrumenten met foto’s en beschrijvingen",
+        "productDescription": "{name} — Perepadya Guitars ✔ Gitaren en basgitaren op voorraad en op bestelling"
+    },
+    "nav": {
+        "home": "Home",
+        "showcase": "Etalage",
+        "blog": "Blog",
+        "about": "Over ons",
+        "order": "Aanvraag sturen",
+        "menu": "Menu",
+        "openMenu": "Menu openen",
+        "closeMenu": "Menu sluiten"
+    },
+    "footer": {
+        "socials": "Sociale media",
+        "rights": "Alle rechten voorbehouden"
+    },
+    "catalog": {
+        "title": "Etalage",
+        "searchPlaceholder": "Producten zoeken...",
+        "sort": "Sortering",
+        "sortByDate": "Op datum",
+        "sortByName": "Op naam",
+        "sortByStatus": "Op beschikbaarheid",
+        "emptyTitle": "Niets gevonden",
+        "emptyHint": "Probeer een andere zoekopdracht."
+    },
+    "product": {
+        "notFound": "Product niet gevonden",
+        "order": "Bestellen",
+        "showImage": "Afbeelding {index} tonen",
+        "status": {
+            "in_stock": "Op voorraad",
+            "on_order": "Op bestelling"
+        }
+    },
+    "blog": {
+        "title": "Blog",
+        "description": "Artikelen van Perepadya Guitars over gitaren: een instrument kiezen, afstellen en onderhouden.",
+        "pageTitle": "Blog — pagina {page}",
+        "searchPlaceholder": "Zoeken",
+        "searchLabel": "Artikelen zoeken",
+        "sort": "Sortering",
+        "sortByDate": "Op publicatiedatum",
+        "empty": "Nog geen artikelen",
+        "notFound": "Niets gevonden",
+        "ctaDefault": "Naar de etalage",
+        "callout": {
+            "info": "Informatie",
+            "tip": "Tip",
+            "warning": "Let op"
+        }
+    },
+    "about": {
+        "title": "Over ons",
+        "description": "Over Perepadya Guitars: gitaren en basgitaren op voorraad en op bestelling.",
+        "paragraphs": [
+            "Perepadya Guitars — gitaren en basgitaren. In de etalage vind je instrumenten met foto’s en beschrijvingen.",
+            "Bij elk instrument staat of het op voorraad is of besteld kan worden."
+        ]
+    },
+    "order": {
+        "title": "Aanvraag sturen",
+        "description": "Laat je naam en telefoonnummer of e-mail achter — we nemen contact op en beantwoorden je vragen.",
+        "subtitle": "Laat je contactgegevens achter — we beantwoorden je vragen",
+        "name": "Naam",
+        "namePlaceholder": "Je naam",
+        "contactMethod": "Hoe kunnen we je bereiken",
+        "contactMethodLabel": "Contactmethode",
+        "phone": "Telefoon",
+        "email": "E-mail",
+        "phoneLabel": "Telefoonnummer met landcode",
+        "phonePlaceholder": "31 6 1234 5678",
+        "emailLabel": "E-mail",
+        "message": "Bericht (optioneel)",
+        "messagePlaceholder": "Wat wil je vragen?",
+        "required": "Vul de verplichte velden in — ze zijn rood gemarkeerd",
+        "submit": "Aanvraag versturen",
+        "sendError": "De aanvraag kon niet worden verstuurd. Probeer het later opnieuw.",
+        "successTitle": "Bedankt, we hebben je aanvraag ontvangen!",
+        "successText": "We nemen binnenkort contact met je op",
+        "toShowcase": "Naar de etalage"
+    },
+    "notFound": {
+        "title": "Pagina niet gevonden",
+        "text": "De pagina is mogelijk verwijderd of de link klopt niet.",
+        "home": "Home",
+        "showcase": "Naar de etalage"
+    },
+    "pagination": {
+        "prev": "Vorige pagina",
+        "next": "Volgende pagina",
+        "pages": "Pagina’s"
+    },
+    "languageSwitcher": {
+        "button": "Taal",
+        "title": "Kies een taal",
+        "close": "Sluiten"
+    },
+    "languages": {
+        "en": "Engels",
+        "uk": "Oekraïens",
+        "de": "Duits",
+        "fr": "Frans",
+        "it": "Italiaans",
+        "es": "Spaans",
+        "pl": "Pools",
+        "ro": "Roemeens",
+        "nl": "Nederlands",
+        "tr": "Turks",
+        "pt": "Portugees",
+        "hu": "Hongaars",
+        "cs": "Tsjechisch"
+    }
+}

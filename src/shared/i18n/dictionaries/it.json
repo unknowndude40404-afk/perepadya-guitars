@@ -1,0 +1,118 @@
+{
+    "site": {
+        "title": "Perepadya Guitars — chitarre e bassi",
+        "description": "Perepadya Guitars — chitarre e bassi ✔ Disponibili e su ordinazione ➤ Vetrina di strumenti con foto e descrizioni",
+        "productDescription": "{name} — Perepadya Guitars ✔ Chitarre e bassi disponibili e su ordinazione"
+    },
+    "nav": {
+        "home": "Home",
+        "showcase": "Vetrina",
+        "blog": "Blog",
+        "about": "Chi siamo",
+        "order": "Invia richiesta",
+        "menu": "Menu",
+        "openMenu": "Apri il menu",
+        "closeMenu": "Chiudi il menu"
+    },
+    "footer": {
+        "socials": "Social network",
+        "rights": "Tutti i diritti riservati"
+    },
+    "catalog": {
+        "title": "Vetrina",
+        "searchPlaceholder": "Cerca prodotti...",
+        "sort": "Ordinamento",
+        "sortByDate": "Per data",
+        "sortByName": "Per nome",
+        "sortByStatus": "Per disponibilità",
+        "emptyTitle": "Nessun risultato",
+        "emptyHint": "Prova a modificare la ricerca."
+    },
+    "product": {
+        "notFound": "Prodotto non trovato",
+        "order": "Ordina",
+        "showImage": "Mostra immagine {index}",
+        "status": {
+            "in_stock": "Disponibile",
+            "on_order": "Su ordinazione"
+        }
+    },
+    "blog": {
+        "title": "Blog",
+        "description": "Articoli di Perepadya Guitars sulle chitarre: scelta dello strumento, regolazione e cura.",
+        "pageTitle": "Blog — pagina {page}",
+        "searchPlaceholder": "Cerca",
+        "searchLabel": "Cerca articoli",
+        "sort": "Ordinamento",
+        "sortByDate": "Per data di pubblicazione",
+        "empty": "Ancora nessun articolo",
+        "notFound": "Nessun risultato",
+        "ctaDefault": "Vai alla vetrina",
+        "callout": {
+            "info": "Informazione",
+            "tip": "Consiglio",
+            "warning": "Attenzione"
+        }
+    },
+    "about": {
+        "title": "Chi siamo",
+        "description": "Su Perepadya Guitars: chitarre e bassi disponibili e su ordinazione.",
+        "paragraphs": [
+            "Perepadya Guitars — chitarre e bassi. In vetrina trovi strumenti con foto e descrizioni.",
+            "Per ogni strumento è indicato se è disponibile o se si può ordinare."
+        ]
+    },
+    "order": {
+        "title": "Invia richiesta",
+        "description": "Lascia il tuo nome e il telefono o l’e-mail — ti ricontatteremo e risponderemo alle tue domande.",
+        "subtitle": "Lascia un contatto — risponderemo alle tue domande",
+        "name": "Nome",
+        "namePlaceholder": "Il tuo nome",
+        "contactMethod": "Come vuoi essere contattato",
+        "contactMethodLabel": "Metodo di contatto",
+        "phone": "Telefono",
+        "email": "E-mail",
+        "phoneLabel": "Numero di telefono con prefisso internazionale",
+        "phonePlaceholder": "39 312 345 6789",
+        "emailLabel": "E-mail",
+        "message": "Messaggio (facoltativo)",
+        "messagePlaceholder": "Cosa vuoi chiedere?",
+        "required": "Compila i campi obbligatori — sono evidenziati in rosso",
+        "submit": "Invia richiesta",
+        "sendError": "Impossibile inviare la richiesta. Riprova tra poco.",
+        "successTitle": "Grazie, abbiamo ricevuto la tua richiesta!",
+        "successText": "Ti contatteremo a breve",
+        "toShowcase": "Vai alla vetrina"
+    },
+    "notFound": {
+        "title": "Pagina non trovata",
+        "text": "La pagina potrebbe essere stata rimossa o il link non è corretto.",
+        "home": "Home",
+        "showcase": "Vai alla vetrina"
+    },
+    "pagination": {
+        "prev": "Pagina precedente",
+        "next": "Pagina successiva",
+        "pages": "Pagine"
+    },
+    "languageSwitcher": {
+        "button": "Lingua",
+        "title": "Scegli una lingua",
+        "close": "Chiudi"
+    },
+    "languages": {
+        "en": "Inglese",
+        "uk": "Ucraino",
+        "de": "Tedesco",
+        "fr": "Francese",
+        "it": "Italiano",
+        "es": "Spagnolo",
+        "pl": "Polacco",
+        "ro": "Rumeno",
+        "nl": "Olandese",
+        "tr": "Turco",
+        "pt": "Portoghese",
+        "hu": "Ungherese",
+        "cs": "Ceco"
+    }
+}

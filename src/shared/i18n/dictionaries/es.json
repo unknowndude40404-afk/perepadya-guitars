@@ -1,0 +1,118 @@
+{
+    "site": {
+        "title": "Perepadya Guitars — guitarras y bajos",
+        "description": "Perepadya Guitars — guitarras y bajos ✔ En stock y por encargo ➤ Escaparate de instrumentos con fotos y descripciones",
+        "productDescription": "{name} — Perepadya Guitars ✔ Guitarras y bajos en stock y por encargo"
+    },
+    "nav": {
+        "home": "Inicio",
+        "showcase": "Escaparate",
+        "blog": "Blog",
+        "about": "Sobre nosotros",
+        "order": "Enviar solicitud",
+        "menu": "Menú",
+        "openMenu": "Abrir menú",
+        "closeMenu": "Cerrar menú"
+    },
+    "footer": {
+        "socials": "Redes sociales",
+        "rights": "Todos los derechos reservados"
+    },
+    "catalog": {
+        "title": "Escaparate",
+        "searchPlaceholder": "Buscar productos...",
+        "sort": "Orden",
+        "sortByDate": "Por fecha",
+        "sortByName": "Por nombre",
+        "sortByStatus": "Por disponibilidad",
+        "emptyTitle": "No se encontró nada",
+        "emptyHint": "Prueba con otra búsqueda."
+    },
+    "product": {
+        "notFound": "Producto no encontrado",
+        "order": "Pedir",
+        "showImage": "Mostrar imagen {index}",
+        "status": {
+            "in_stock": "En stock",
+            "on_order": "Por encargo"
+        }
+    },
+    "blog": {
+        "title": "Blog",
+        "description": "Artículos de Perepadya Guitars sobre guitarras: elección del instrumento, ajuste y cuidado.",
+        "pageTitle": "Blog — página {page}",
+        "searchPlaceholder": "Buscar",
+        "searchLabel": "Buscar artículos",
+        "sort": "Orden",
+        "sortByDate": "Por fecha de publicación",
+        "empty": "Aún no hay artículos",
+        "notFound": "No se encontró nada",
+        "ctaDefault": "Ir al escaparate",
+        "callout": {
+            "info": "Información",
+            "tip": "Consejo",
+            "warning": "Atención"
+        }
+    },
+    "about": {
+        "title": "Sobre nosotros",
+        "description": "Sobre Perepadya Guitars: guitarras y bajos en stock y por encargo.",
+        "paragraphs": [
+            "Perepadya Guitars — guitarras y bajos. En el escaparate encontrarás instrumentos con fotos y descripciones.",
+            "En cada instrumento se indica si está en stock o si se puede encargar."
+        ]
+    },
+    "order": {
+        "title": "Enviar solicitud",
+        "description": "Deja tu nombre y teléfono o correo electrónico — te contactaremos y responderemos a tus preguntas.",
+        "subtitle": "Deja tu contacto — responderemos a tus preguntas",
+        "name": "Nombre",
+        "namePlaceholder": "Tu nombre",
+        "contactMethod": "Cómo prefieres que te contactemos",
+        "contactMethodLabel": "Forma de contacto",
+        "phone": "Teléfono",
+        "email": "Correo electrónico",
+        "phoneLabel": "Número de teléfono con prefijo del país",
+        "phonePlaceholder": "34 612 345 678",
+        "emailLabel": "Correo electrónico",
+        "message": "Mensaje (opcional)",
+        "messagePlaceholder": "¿Qué quieres consultar?",
+        "required": "Rellena los campos obligatorios — están marcados en rojo",
+        "submit": "Enviar solicitud",
+        "sendError": "No se pudo enviar la solicitud. Inténtalo de nuevo más tarde.",
+        "successTitle": "¡Gracias, hemos recibido tu solicitud!",
+        "successText": "Te contactaremos en breve",
+        "toShowcase": "Ir al escaparate"
+    },
+    "notFound": {
+        "title": "Página no encontrada",
+        "text": "Es posible que la página se haya eliminado o que el enlace sea incorrecto.",
+        "home": "Inicio",
+        "showcase": "Ir al escaparate"
+    },
+    "pagination": {
+        "prev": "Página anterior",
+        "next": "Página siguiente",
+        "pages": "Páginas"
+    },
+    "languageSwitcher": {
+        "button": "Idioma",
+        "title": "Elige un idioma",
+        "close": "Cerrar"
+    },
+    "languages": {
+        "en": "Inglés",
+        "uk": "Ucraniano",
+        "de": "Alemán",
+        "fr": "Francés",
+        "it": "Italiano",
+        "es": "Español",
+        "pl": "Polaco",
+        "ro": "Rumano",
+        "nl": "Neerlandés",
+        "tr": "Turco",
+        "pt": "Portugués",
+        "hu": "Húngaro",
+        "cs": "Checo"
+    }
+}

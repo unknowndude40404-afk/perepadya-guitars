@@ -1,0 +1,48 @@
+:root {
+    --page-bg: #0b0b0c;
+
+    --bg-primary: #111111;
+    --bg-secondary: #171717;
+    --bg-dropdown: #111111ee;
+
+    --text-primary: #f2f2f2;
+    --text-secondary: #a1a1aa;
+
+    --border-primary: #2a2a2a;
+    --border-hover: #b8bcc4;
+
+    --accent-primary: #b8bcc4;
+    --accent-hover: #d3d6dc;
+    --accent-subtle: rgba(184, 188, 196, 0.12);
+
+    --shadow-primary: 0 8px 20px rgba(0, 0, 0, 0.35);
+
+    --icon-active: #b8bcc4;
+    --icon-inactive: #8a8a8a;
+    --icon-primary: #e5e5e5;
+
+    --overlay-bg: rgba(0, 0, 0, 0.4);
+    --sidebar-bg: #000000d9;
+
+    --card-bg: #111111;
+    --card-bg-hover: #181818;
+
+    --toast-bg: #1f1f1f;
+    --toast-text: #f2f2f2;
+
+    --accent-text: #d3d6dc;
+
+    --callout-info-bg: #171717;
+    --callout-info-border: #2a2a2a;
+    --callout-info-accent: #f2f2f2;
+
+    --callout-tip-bg: rgba(184, 188, 196, 0.12);
+    --callout-tip-border: rgba(184, 188, 196, 0.35);
+    --callout-tip-accent: #d3d6dc;
+
+    --callout-warning-bg: rgba(220, 38, 38, 0.12);
+    --callout-warning-border: rgba(248, 113, 113, 0.35);
+    --callout-warning-accent: #fca5a5;
+
+    --error-primary: #dc2626;
+}

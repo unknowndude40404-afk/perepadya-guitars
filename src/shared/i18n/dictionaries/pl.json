@@ -1,0 +1,118 @@
+{
+    "site": {
+        "title": "Perepadya Guitars — gitary i gitary basowe",
+        "description": "Perepadya Guitars — gitary i gitary basowe ✔ Dostępne od ręki i na zamówienie ➤ Witryna instrumentów ze zdjęciami i opisami",
+        "productDescription": "{name} — Perepadya Guitars ✔ Gitary i gitary basowe dostępne od ręki i na zamówienie"
+    },
+    "nav": {
+        "home": "Strona główna",
+        "showcase": "Witryna",
+        "blog": "Blog",
+        "about": "O nas",
+        "order": "Zostaw zapytanie",
+        "menu": "Menu",
+        "openMenu": "Otwórz menu",
+        "closeMenu": "Zamknij menu"
+    },
+    "footer": {
+        "socials": "Media społecznościowe",
+        "rights": "Wszelkie prawa zastrzeżone"
+    },
+    "catalog": {
+        "title": "Witryna",
+        "searchPlaceholder": "Szukaj produktów...",
+        "sort": "Sortowanie",
+        "sortByDate": "Według daty",
+        "sortByName": "Według nazwy",
+        "sortByStatus": "Według dostępności",
+        "emptyTitle": "Nic nie znaleziono",
+        "emptyHint": "Spróbuj zmienić zapytanie."
+    },
+    "product": {
+        "notFound": "Nie znaleziono produktu",
+        "order": "Zamów",
+        "showImage": "Pokaż zdjęcie {index}",
+        "status": {
+            "in_stock": "Dostępny",
+            "on_order": "Na zamówienie"
+        }
+    },
+    "blog": {
+        "title": "Blog",
+        "description": "Artykuły Perepadya Guitars o gitarach: wybór instrumentu, regulacja i pielęgnacja.",
+        "pageTitle": "Blog — strona {page}",
+        "searchPlaceholder": "Szukaj",
+        "searchLabel": "Szukaj artykułów",
+        "sort": "Sortowanie",
+        "sortByDate": "Według daty publikacji",
+        "empty": "Brak artykułów",
+        "notFound": "Nic nie znaleziono",
+        "ctaDefault": "Przejdź do witryny",
+        "callout": {
+            "info": "Informacja",
+            "tip": "Wskazówka",
+            "warning": "Uwaga"
+        }
+    },
+    "about": {
+        "title": "O nas",
+        "description": "O Perepadya Guitars: gitary i gitary basowe dostępne od ręki i na zamówienie.",
+        "paragraphs": [
+            "Perepadya Guitars — gitary i gitary basowe. W witrynie znajdziesz instrumenty ze zdjęciami i opisami.",
+            "Przy każdym instrumencie widać, czy jest dostępny od ręki, czy można go zamówić."
+        ]
+    },
+    "order": {
+        "title": "Zostaw zapytanie",
+        "description": "Zostaw imię i telefon lub e-mail — skontaktujemy się z Tobą i odpowiemy na pytania.",
+        "subtitle": "Zostaw kontakt — odpowiemy na Twoje pytania",
+        "name": "Imię",
+        "namePlaceholder": "Twoje imię",
+        "contactMethod": "Jak się z Tobą skontaktować",
+        "contactMethodLabel": "Sposób kontaktu",
+        "phone": "Telefon",
+        "email": "E-mail",
+        "phoneLabel": "Numer telefonu z kodem kraju",
+        "phonePlaceholder": "48 512 345 678",
+        "emailLabel": "E-mail",
+        "message": "Wiadomość (opcjonalnie)",
+        "messagePlaceholder": "O co chcesz zapytać?",
+        "required": "Wypełnij wymagane pola — są podświetlone na czerwono",
+        "submit": "Wyślij zapytanie",
+        "sendError": "Nie udało się wysłać zapytania. Spróbuj ponownie za chwilę.",
+        "successTitle": "Dziękujemy, otrzymaliśmy zapytanie!",
+        "successText": "Skontaktujemy się z Tobą wkrótce",
+        "toShowcase": "Do witryny"
+    },
+    "notFound": {
+        "title": "Nie znaleziono strony",
+        "text": "Strona mogła zostać usunięta lub link jest nieprawidłowy.",
+        "home": "Strona główna",
+        "showcase": "Do witryny"
+    },
+    "pagination": {
+        "prev": "Poprzednia strona",
+        "next": "Następna strona",
+        "pages": "Strony"
+    },
+    "languageSwitcher": {
+        "button": "Język",
+        "title": "Wybierz język",
+        "close": "Zamknij"
+    },
+    "languages": {
+        "en": "Angielski",
+        "uk": "Ukraiński",
+        "de": "Niemiecki",
+        "fr": "Francuski",
+        "it": "Włoski",
+        "es": "Hiszpański",
+        "pl": "Polski",
+        "ro": "Rumuński",
+        "nl": "Niderlandzki",
+        "tr": "Turecki",
+        "pt": "Portugalski",
+        "hu": "Węgierski",
+        "cs": "Czeski"
+    }
+}

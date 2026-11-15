@@ -1,0 +1,118 @@
+{
+    "site": {
+        "title": "Perepadya Guitars — guitars and bass guitars",
+        "description": "Perepadya Guitars — guitars and bass guitars ✔ In stock and made to order ➤ Instrument showcase with photos and descriptions",
+        "productDescription": "{name} — Perepadya Guitars ✔ Guitars and bass guitars in stock and made to order"
+    },
+    "nav": {
+        "home": "Home",
+        "showcase": "Showcase",
+        "blog": "Blog",
+        "about": "About us",
+        "order": "Request a quote",
+        "menu": "Menu",
+        "openMenu": "Open menu",
+        "closeMenu": "Close menu"
+    },
+    "footer": {
+        "socials": "Social media",
+        "rights": "All rights reserved"
+    },
+    "catalog": {
+        "title": "Showcase",
+        "searchPlaceholder": "Search products...",
+        "sort": "Sorting",
+        "sortByDate": "By date",
+        "sortByName": "By name",
+        "sortByStatus": "By availability",
+        "emptyTitle": "Nothing found",
+        "emptyHint": "Try a different search query."
+    },
+    "product": {
+        "notFound": "Product not found",
+        "order": "Order",
+        "showImage": "Show image {index}",
+        "status": {
+            "in_stock": "In stock",
+            "on_order": "Made to order"
+        }
+    },
+    "blog": {
+        "title": "Blog",
+        "description": "Perepadya Guitars articles about guitars: choosing an instrument, setup and care.",
+        "pageTitle": "Blog — page {page}",
+        "searchPlaceholder": "Search",
+        "searchLabel": "Search articles",
+        "sort": "Sorting",
+        "sortByDate": "By publication date",
+        "empty": "No articles yet",
+        "notFound": "Nothing found",
+        "ctaDefault": "Go to the showcase",
+        "callout": {
+            "info": "Information",
+            "tip": "Tip",
+            "warning": "Warning"
+        }
+    },
+    "about": {
+        "title": "About us",
+        "description": "About Perepadya Guitars: guitars and bass guitars in stock and made to order.",
+        "paragraphs": [
+            "Perepadya Guitars — guitars and bass guitars. The showcase brings together instruments with photos and descriptions.",
+            "Each instrument shows whether it is in stock or can be made to order."
+        ]
+    },
+    "order": {
+        "title": "Request a quote",
+        "description": "Leave your name and phone or email — we will get back to you and answer your questions.",
+        "subtitle": "Leave your contact — we will answer your questions",
+        "name": "Name",
+        "namePlaceholder": "Your name",
+        "contactMethod": "How should we contact you",
+        "contactMethodLabel": "Contact method",
+        "phone": "Phone",
+        "email": "Email",
+        "phoneLabel": "Phone number with country code",
+        "phonePlaceholder": "1 555 123 4567",
+        "emailLabel": "Email",
+        "message": "Message (optional)",
+        "messagePlaceholder": "What would you like to ask?",
+        "required": "Fill in the required fields — they are highlighted in red",
+        "submit": "Send request",
+        "sendError": "Could not send the request. Please try again a little later.",
+        "successTitle": "Thank you, we got your request!",
+        "successText": "We will contact you shortly",
+        "toShowcase": "To the showcase"
+    },
+    "notFound": {
+        "title": "Page not found",
+        "text": "The page may have been removed or the link is incorrect.",
+        "home": "Home",
+        "showcase": "To the showcase"
+    },
+    "pagination": {
+        "prev": "Previous page",
+        "next": "Next page",
+        "pages": "Pages"
+    },
+    "languageSwitcher": {
+        "button": "Language",
+        "title": "Choose a language",
+        "close": "Close"
+    },
+    "languages": {
+        "en": "English",
+        "uk": "Ukrainian",
+        "de": "German",
+        "fr": "French",
+        "it": "Italian",
+        "es": "Spanish",
+        "pl": "Polish",
+        "ro": "Romanian",
+        "nl": "Dutch",
+        "tr": "Turkish",
+        "pt": "Portuguese",
+        "hu": "Hungarian",
+        "cs": "Czech"
+    }
+}

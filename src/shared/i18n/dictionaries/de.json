@@ -1,0 +1,118 @@
+{
+    "site": {
+        "title": "Perepadya Guitars — Gitarren und Bassgitarren",
+        "description": "Perepadya Guitars — Gitarren und Bassgitarren ✔ Auf Lager und auf Bestellung ➤ Instrumenten-Schaufenster mit Fotos und Beschreibungen",
+        "productDescription": "{name} — Perepadya Guitars ✔ Gitarren und Bassgitarren auf Lager und auf Bestellung"
+    },
+    "nav": {
+        "home": "Startseite",
+        "showcase": "Schaufenster",
+        "blog": "Blog",
+        "about": "Über uns",
+        "order": "Anfrage senden",
+        "menu": "Menü",
+        "openMenu": "Menü öffnen",
+        "closeMenu": "Menü schließen"
+    },
+    "footer": {
+        "socials": "Soziale Medien",
+        "rights": "Alle Rechte vorbehalten"
+    },
+    "catalog": {
+        "title": "Schaufenster",
+        "searchPlaceholder": "Produkte suchen...",
+        "sort": "Sortierung",
+        "sortByDate": "Nach Datum",
+        "sortByName": "Nach Name",
+        "sortByStatus": "Nach Verfügbarkeit",
+        "emptyTitle": "Nichts gefunden",
+        "emptyHint": "Versuchen Sie eine andere Suchanfrage."
+    },
+    "product": {
+        "notFound": "Produkt nicht gefunden",
+        "order": "Bestellen",
+        "showImage": "Bild {index} anzeigen",
+        "status": {
+            "in_stock": "Auf Lager",
+            "on_order": "Auf Bestellung"
+        }
+    },
+    "blog": {
+        "title": "Blog",
+        "description": "Artikel von Perepadya Guitars über Gitarren: Auswahl, Einstellung und Pflege.",
+        "pageTitle": "Blog — Seite {page}",
+        "searchPlaceholder": "Suche",
+        "searchLabel": "Artikel suchen",
+        "sort": "Sortierung",
+        "sortByDate": "Nach Veröffentlichungsdatum",
+        "empty": "Noch keine Artikel",
+        "notFound": "Nichts gefunden",
+        "ctaDefault": "Zum Schaufenster",
+        "callout": {
+            "info": "Information",
+            "tip": "Tipp",
+            "warning": "Achtung"
+        }
+    },
+    "about": {
+        "title": "Über uns",
+        "description": "Über Perepadya Guitars: Gitarren und Bassgitarren auf Lager und auf Bestellung.",
+        "paragraphs": [
+            "Perepadya Guitars — Gitarren und Bassgitarren. Im Schaufenster finden Sie Instrumente mit Fotos und Beschreibungen.",
+            "Bei jedem Instrument steht, ob es auf Lager ist oder bestellt werden kann."
+        ]
+    },
+    "order": {
+        "title": "Anfrage senden",
+        "description": "Hinterlassen Sie Ihren Namen und Ihre Telefonnummer oder E-Mail — wir melden uns und beantworten Ihre Fragen.",
+        "subtitle": "Hinterlassen Sie Ihren Kontakt — wir beantworten Ihre Fragen",
+        "name": "Name",
+        "namePlaceholder": "Ihr Name",
+        "contactMethod": "Wie sollen wir Sie kontaktieren",
+        "contactMethodLabel": "Kontaktweg",
+        "phone": "Telefon",
+        "email": "E-Mail",
+        "phoneLabel": "Telefonnummer mit Ländervorwahl",
+        "phonePlaceholder": "49 151 2345 6789",
+        "emailLabel": "E-Mail",
+        "message": "Nachricht (optional)",
+        "messagePlaceholder": "Was möchten Sie fragen?",
+        "required": "Füllen Sie die Pflichtfelder aus — sie sind rot markiert",
+        "submit": "Anfrage senden",
+        "sendError": "Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es später erneut.",
+        "successTitle": "Danke, wir haben Ihre Anfrage erhalten!",
+        "successText": "Wir melden uns in Kürze",
+        "toShowcase": "Zum Schaufenster"
+    },
+    "notFound": {
+        "title": "Seite nicht gefunden",
+        "text": "Die Seite wurde möglicherweise entfernt oder der Link ist falsch.",
+        "home": "Startseite",
+        "showcase": "Zum Schaufenster"
+    },
+    "pagination": {
+        "prev": "Vorherige Seite",
+        "next": "Nächste Seite",
+        "pages": "Seiten"
+    },
+    "languageSwitcher": {
+        "button": "Sprache",
+        "title": "Sprache wählen",
+        "close": "Schließen"
+    },
+    "languages": {
+        "en": "Englisch",
+        "uk": "Ukrainisch",
+        "de": "Deutsch",
+        "fr": "Französisch",
+        "it": "Italienisch",
+        "es": "Spanisch",
+        "pl": "Polnisch",
+        "ro": "Rumänisch",
+        "nl": "Niederländisch",
+        "tr": "Türkisch",
+        "pt": "Portugiesisch",
+        "hu": "Ungarisch",
+        "cs": "Tschechisch"
+    }
+}
