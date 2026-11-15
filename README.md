@@ -1,1 +1,1 @@
-tree -a -L 4 -I 'node_modules|.next|.git|dist|build|coverage|.vercel|*.log|.DS_Store'
+
